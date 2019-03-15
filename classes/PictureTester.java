@@ -16,7 +16,43 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
-  
+
+  /** Method to test testKeepOnlyBlue */
+  public static void testKeepOnlyBlue()
+  {
+
+  }
+
+  /** Method to test testKeepOnlyRed */
+  public static void testKeepOnlyRed()
+  {
+
+  }
+
+  /** Method to test testKeepOnlyGreen */
+  public static void testKeepOnlyGreen()
+  {
+
+  }
+
+  /** Method to test testNegate */
+  public static void testNegate()
+  {
+
+  }
+
+  /** Method to test testGrayscale */
+  public static void testGrayscale()
+  {
+
+  }
+
+  /** Method to test testFixUnderwater */
+  public static void testFixUnderwater()
+  {
+
+  }
+
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -25,7 +61,7 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
-  
+
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -34,7 +70,25 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
+
+  /** Method to test testMirrorArms */
+  public static void testMirrorArms()
+  {
+
+  }
   
+  /** Method to test testMirrorGull */
+  public static void testMirrorGull()
+  {
+
+  }
+
+  /** Method to test testMirrorDiagonal */
+  public static void testMirrorDiagonal()
+  {
+
+  }
+
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -42,6 +96,51 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+  /** Method to test mirrorVertical */
+  public static void
+  {
+
+  }
+
+
+  
+
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -65,7 +164,7 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    //testMirrorVertical();
+    testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
