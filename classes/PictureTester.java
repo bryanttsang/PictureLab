@@ -97,51 +97,12 @@ public class PictureTester
     canvas.explore();
   }
 
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
-  {
-
-  }
-  /** Method to test mirrorVertical */
-  public static void
+  /** Method to test testCopy */
+  public static void testCopy()
   {
 
   }
 
-
-  
-
-  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -149,7 +110,49 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
+  /** Method to test testEdgeDetection2 */
+  public static void testEdgeDetection2()
+  {
+
+  }
+
+  /** Method to test testChromakey */
+  public static void testChromakey()
+  {
+
+  }
+
+  /** Method to test testEncodeAndDecode */
+  public static void testEncodeAndDecode()
+  {
+
+  }
+
+  /** Method to test testGetCountRedOverValue */
+  public static void testGetCountRedOverValue(int red)
+  {
+
+  }
+
+  /** Method to test testSetRedToHalfValueInTopHalf */
+  public static void testSetRedToHalfValueInTopHalf()
+  {
+
+  }
+
+  /** Method to test testClearBlueOverValue */
+  public static void testClearBlueOverValue(int blue)
+  {
+
+  }
+
+  /** Method to test testGetAverageForColumn */
+  public static void testGetAverageForColumn(int column)
+  {
+
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)

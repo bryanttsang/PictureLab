@@ -2,7 +2,46 @@ public class IntArrayWorker
 {
   /** two dimensional matrix */
   private int[][] matrix = null;
-  
+
+  /**
+   * @param number a passed integer value
+   * @return the count of the number of times a passed integer value is found in the matrix
+   */
+  public int getCount(int number)
+  {
+    int total = 0;
+    for (int row = 0; row < matrix.length; row++)
+    {
+      for (int col = 0; col < matrix[0].length; col++)
+      {
+        if (matrix[row][col] == number)
+        {
+          total++;
+        }
+      }
+    }
+    return total;
+  }
+
+  /**
+   * @return the largest value in the matrix
+   */
+  public int getLargest()
+  {
+    int largest = 0;
+    for (int row = 0; row < matrix.length; row++)
+    {
+      for (int col = 0; col < matrix[0].length; col++)
+      {
+        if (matrix[row][col] > largest)
+        {
+          largest = matrix[row][col];
+        }
+      }
+    }
+    return largest;
+  }
+
   /** set the matrix to the passed one
     * @param theMatrix the one to use
     */
