@@ -42,6 +42,16 @@ public class IntArrayWorker
     return largest;
   }
 
+  public int getColTotal(int col)
+  {
+    int sum = 0;
+    for (int row = 0; row < matrix.length; row++)
+    {
+      sum += matrix[row][col];
+    }
+    return sum;
+  }
+
   /** set the matrix to the passed one
     * @param theMatrix the one to use
     */
