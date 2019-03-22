@@ -86,7 +86,10 @@ public class PictureTester
   /** Method to test testMirrorArms */
   public static void testMirrorArms()
   {
-
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorArms();
+    snowman.explore();
   }
   
   /** Method to test testMirrorGull */
@@ -178,10 +181,10 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    testFixUnderwater();
+    //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
