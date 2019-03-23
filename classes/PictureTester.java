@@ -95,7 +95,10 @@ public class PictureTester
   /** Method to test testMirrorGull */
   public static void testMirrorGull()
   {
-
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorGull();
+    seagull.explore();
   }
 
   /** Method to test testMirrorDiagonal */
@@ -184,8 +187,8 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    testMirrorArms();
-    //testMirrorGull();
+    //testMirrorArms();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();

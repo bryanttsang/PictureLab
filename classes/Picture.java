@@ -215,22 +215,45 @@ public class Picture extends SimplePicture
     Pixel bottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
 
-    for (int col = 105; col < 170; col++)
+    for (int col = 169; col >= 105; col--)
     {
-      for (int row = 159; row < 191; row++)
+      for (int row = 190; row >= 159; row--)
       {
         topPixel = pixels[row][col];
-        bottomPixel = pixels[row+16][col];
-        bottomPixel.setColor(topPixel.getColor());
+        if (topPixel.getRed() + topPixel.getGreen() + topPixel.getBlue() <= 383)
+        {
+          bottomPixel = pixels[row+16][col];
+          bottomPixel.setColor(topPixel.getColor());
+        }
       }
     }
-    for (int col= 293; col < 294; col++)
+    for (int col= 293; col >= 239; col--)
     {
-      for (int row = 172; row < 196; row++)
+      for (int row = 194; row >= 172; row--)
       {
         topPixel = pixels[row][col];
-        bottomPixel = pixels[row+18][col];
-        bottomPixel.setColor(topPixel.getColor());
+        if (topPixel.getRed() + topPixel.getGreen() + topPixel.getBlue() <= 383)
+        {
+          bottomPixel = pixels[row+18][col];
+          bottomPixel.setColor(topPixel.getColor());
+        }
+      }
+    }
+  }
+
+  public void mirrorGull()
+  {
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+
+    for (int col = 343; col >= 39; col--)
+    {
+      for (int row = 0; row <= 485; row++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][343+(343-col)];
+        rightPixel.setColor(leftPixel.getColor());
       }
     }
   }
