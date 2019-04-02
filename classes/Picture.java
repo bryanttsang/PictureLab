@@ -412,6 +412,68 @@ public class Picture extends SimplePicture
     }
   }
 
+  //1a
+  public int getCountRedOverValue(int value)
+  {
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if (pixelObj.getRed() > value)
+        {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  //1b
+  public void setRedToHalfValueInTopHalf()
+  {
+    Pixel pixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    for (int row = 1; row < pixels.length-1; row++)
+    {
+      for (int col = 1; col < pixels[0].length-1; col++)
+      {
+        pixel = pixels[row][col];
+        pixel.setRed(pixel.getRed()/2);
+      }
+    }
+  }
+
+  //2a
+  public void clearBlueOverValue(int value)
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if (pixelObj.getBlue() > value)
+        {
+          pixelObj.setBlue(0);
+        }
+      }
+    }
+  }
+
+  //2b
+  public int[] getAverageForColumn(int[][] picture, int col)
+  {
+    int[] average = new int[picture.length];
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel pixel = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      pixel = pixels[row][col];
+      average[row] = ( pixel.getRed()+pixel.getGreen()+pixel.getBlue() ) /3;
+    }
+    return average;
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
