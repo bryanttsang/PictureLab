@@ -462,10 +462,10 @@ public class Picture extends SimplePicture
   }
 
   //2b
-  public int[] getAverageForColumn(int[][] picture, int col)
+  public int[] getAverageForColumn(int col)
   {
-    int[] average = new int[picture.length];
     Pixel[][] pixels = this.getPixels2D();
+    int[] average = new int[pixels.length];
     Pixel pixel = null;
     for (int row = 0; row < pixels.length; row++)
     {
