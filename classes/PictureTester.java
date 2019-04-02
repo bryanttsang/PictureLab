@@ -43,7 +43,7 @@ public class PictureTester
   {
     Picture beach = new Picture("beach.jpg");
     beach.explore();
-    beach.Negate();
+    beach.negate();
     beach.explore();
   }
 
@@ -115,6 +115,13 @@ public class PictureTester
     canvas.explore();
   }
 
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+  }
+
   /** Method to test testCopy */
   public static void testCopy()
   {
@@ -132,7 +139,9 @@ public class PictureTester
   /** Method to test testEdgeDetection2 */
   public static void testEdgeDetection2()
   {
-
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2(10);
+    swan.explore();
   }
 
   /** Method to test testChromakey */
@@ -188,12 +197,13 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
+    //testMyCollage();
     //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
+    testEdgeDetection();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

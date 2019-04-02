@@ -111,7 +111,7 @@ public class Picture extends SimplePicture
     }
   }
 
-  public void Negate()
+  public void negate()
   {
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
@@ -289,6 +289,43 @@ public class Picture extends SimplePicture
     }   
   }
 
+  public void copy(Picture fromPic,
+                   int startRow, int endRow, int startCol, int endCol)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = startRow; fromRow < endRow && fromRow < toPixels.length; fromRow++)
+    {
+      for (int fromCol = startCol; fromCol < endCol && fromCol < toPixels[0].length; fromCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[fromRow][fromCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }
+  }
+
+  public void myCollage()
+  {
+    Picture p = new Picture("flower1.jpg");
+    this.copy(p,0,0);
+    this.copy(p,100,0);
+    this.copy(p,200,0);
+    Picture pNoBlue = new Picture(p);
+    pNoBlue.zeroBlue();
+    Picture pKeepOnlyBlue = new Picture(p);
+    pKeepOnlyBlue.keepOnlyBlue();
+    Picture pNegate = new Picture(p);
+    pNegate.negate();
+    this.copy(pNoBlue,150,0);
+    this.copy(pKeepOnlyBlue,200,0);
+    this.copy(pNegate,0,0);
+    this.mirrorVertical();
+    this.write("collage.jpg");
+  }
+
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
@@ -314,25 +351,67 @@ public class Picture extends SimplePicture
   {
     Pixel leftPixel = null;
     Pixel rightPixel = null;
+    Pixel downPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     Color rightColor = null;
-    for (int row = 0; row < pixels.length; row++)
+    Color downColor = null;
+    for (int row = 0; row < pixels.length-1; row++)
     {
       for (int col = 0; 
            col < pixels[0].length-1; col++)
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][col+1];
+        downPixel = pixels[row+1][col];
+        downColor = downPixel.getColor();
         rightColor = rightPixel.getColor();
         if (leftPixel.colorDistance(rightColor) > 
-            edgeDist)
+            edgeDist && leftPixel.colorDistance(downColor) >
+                edgeDist)
           leftPixel.setColor(Color.BLACK);
         else
           leftPixel.setColor(Color.WHITE);
       }
     }
   }
-  
+
+  public void edgeDetection2(int edgeDist)
+  {
+    Pixel thisPixel = null;
+    Pixel upPixel = null;
+    Pixel downPixel = null;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color upColor = null;
+    Color downColor = null;
+    Color leftColor = null;
+    Color rightColor = null;
+    for (int row = 1; row < pixels.length-1; row++)
+    {
+      for (int col = 1;
+           col < pixels[0].length-1; col++)
+      {
+        thisPixel = pixels[row][col];
+        upPixel = pixels[row-1][col];
+        downPixel = pixels[row+1][col];
+        leftPixel = pixels[row][col-1];
+        rightPixel = pixels[row][col+1];
+        upColor = upPixel.getColor();
+        downColor = downPixel.getColor();
+        leftColor = leftPixel.getColor();
+        rightColor = rightPixel.getColor();
+        if (thisPixel.colorDistance(upColor) > edgeDist
+                && thisPixel.colorDistance(downColor) > edgeDist
+                && thisPixel.colorDistance(leftColor) > edgeDist
+                && thisPixel.colorDistance(rightColor) > edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+  }
+
   
   /* Main method for testing - each class in Java can have a main 
    * method 
